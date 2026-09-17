@@ -1,0 +1,12 @@
+services:
+  router-app:
+    build: .
+    container_name: router-python-app
+    ports:
+      - "5000:5000"
+    environment:
+      SSH_USERNAME: "admin"
+      SSH_PASSWORD: "admin"
+      SSH_PORT: "22"
+      SSH_TIMEOUT: "10"
+    restart: unless-stopped
